@@ -2,3 +2,8 @@
 <h2><%= @user.email %></h2>
 
 <%= gravatar_for @user %>
+
+
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
