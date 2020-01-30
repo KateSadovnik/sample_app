@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def new
   	@user = User.new
@@ -42,8 +42,11 @@ end
 
 def destroy
   @user = User.find(params[:id])
-  @user.destroy
-  redirect_to users_url
+  if @user.destroy
+    else flash[:danger] = "ZZZZZZZZZZZZZZZZZ"
+
+  end
+    redirect_to users_url
 end
 
 
