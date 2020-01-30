@@ -27,7 +27,7 @@ Account <b class="caret"></b>
 <li><%= link_to "Settings", '#' %></li>
 <li class="divider"></li>
 <li>
-<%= link_to "Log out", session_path, method: "delete" %>
+<%= link_to "Log out", session_path(current_user.id), method: "delete" %>
 </li>
 </ul>
 </li>
