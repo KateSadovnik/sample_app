@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
 	before_save :to_lower_case
 
-	validates :name, presence: true, length: { maximum: 6 }
+	validates :name, presence: true, length: { maximum: 20 }
 	VALID_REGEXP = /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/
 	validates :email, presence: true, format: { with: VALID_REGEXP}, 
 						uniqueness: {case_sensetive: false}
