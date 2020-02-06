@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
+  	@micropost = Micropost.new
+  	@feed_items = current_user.microposts.paginate(page: params[:page])
   end
 
   def help
