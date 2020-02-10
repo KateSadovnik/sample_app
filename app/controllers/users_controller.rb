@@ -53,6 +53,15 @@ def destroy
     redirect_to users_url
 end
 
+def following
+
+  @followings = current_user.following
+end
+
+def followers
+  @followers = current_user.followers
+  
+end
 
   private
 

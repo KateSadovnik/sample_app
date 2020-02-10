@@ -10,6 +10,12 @@
 <div class="alert alert-<%= message_type %>"><%= message %></div>
 <% end %>
 
+<section class="stats">
+<%= render 'shared/stats' %>
+</section>
+
+<%= render 'follow_form' if logged_in? %>
+
 
 <% if @user.microposts.any? %>
 	<h3>Microposts (<%= @user.microposts.count %>)</h3>
